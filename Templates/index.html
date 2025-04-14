@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Price Prediction</title>
+</head>
+<body>
+    <h1>Bitcoin Price Prediction: Buy or Sell</h1>
+    <form action="/predict" method="POST">
+        <label for="close">Enter Current Close Price:</label><br>
+        <input type="text" id="close" name="close" required><br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <h3>Prediction: {{ prediction }}</h3>
+        <p>Predicted Next Close Price: {{ predicted_price }} USD</p>
+    {% endif %}
+</body>
+</html>
